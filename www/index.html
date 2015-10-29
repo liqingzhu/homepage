@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="维客佳是一家专业的太原上门汽车保养公司，提供太原市内各种汽车相关部分进行检查、清洁、补给、润滑、调整或更换某些零件的上门汽车保养服务 免费预约电话：400-6080-573" />
+    <meta name="keywords" content="太原上门汽车保养,汽车保养价格,太原汽车上门保养,汽车保养,汽车上门保养,上门汽车保养" />
+    <title>
+        荐宝-一点一滴让世界更公平
+    </title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="libs/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/webcss.css" rel="stylesheet"/>
+    <script src="libs/jquery/modernizr.js"></script>
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/dist/js/bootstrap.js"></script>
+    <link href="css/index.css" rel="stylesheet" />
+    <script type="text/javascript" src="libs/jquery/jquery.parallax-1.1.3.js"></script>
+    <script language="" type="text/javascript">
+        $(document).ready(function () {
+            $('.part-item').parallax("100%", 0.5);
+            $('#provide div').mouseover(function () {
+                $(this).find('a').fadeIn(300);
+            });
+            $('#provide div').mouseleave(function () {
+                $(this).find('a').fadeOut(300);
+            });
+
+        })
+        $(window).load(function () {
+            change_width();
+        })
+        $(window).resize(function () {
+            change_width();
+        })
+        function gotoGoal(obj, e) {
+            $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+            var myTop = $('#' + obj).offset().top - 90;
+            $body.animate({ scrollTop: myTop }, 500);
+        }
+        //改变宽度
+        function change_width() {
+            $('#provide div').each(function () {
+                var width = $(this).find('img').width();
+                var left = ($(this).outerWidth() - $(this).find('img').width()) / 2;
+                $(this).find('a').width(width).css({ 'left': left + 'px' });
+            });
+        }
+    </script>
+
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            var browserType = 'Chrome';
+            var browserVersion = parseInt('46.0');
+            var myheight = $(window).height();
+            if (browserType == 'IE' && browserVersion < 9) {
+                $('body div').hide();
+                $('body').append('<div id="ie-alert-overlay" style="height: ' + myheight + 'px;">&nbsp;</div><div id="ie-alert-panel" style="background-position: -626px -116px; top: 300px;"><span>你知道你的Internet Explorer是过时了吗?</span><p>为了得到我们网站最好的体验效果,我们建议您升级到最新版本的Internet Explorer或选择另一个web浏览器.一个列表最流行的web浏览器在下面可以找到.</p><br /><h1 id="goon" style="font-size: 20px; cursor: pointer;" onclick="hide20130522();">&gt;&gt;&gt;继续访问</h1><div class="browser"><ul><li><a class="chrome" href="https://www.google.com/chrome/" target="_blank"></a></li><li><a class="firefox" href="http://www.mozilla.org/en-US/firefox/new/" target="_blank"></a></li><li><a class="ie9" href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie/" target="_blank"></a></li><li><a class="safari" href="http://www.apple.com/safari/download/" target="_blank"></a></li><li><a class="opera" href="http://www.opera.com/download/" target="_blank"></a></li></ul></div></div>');
+            }
+            change_menu();
+            change_banner();
+            change_nav();
+            var cid = $('#ww_jsCid20120423').val();
+            if (cid == '') {
+                $('#menu li:eq(0)').addClass('active');
+            }
+            else {
+                if ($('.nav-tabs').length > 0) {
+                    $('#menu a[href="' + $('.nav-tabs a:eq(0)').attr('href') + '"]').parent().addClass('active');
+                }
+                else {
+                    $('#menu a').each(function () {
+                        var myhref = $(this).attr('href');
+                        if (myhref.indexOf('/' + cid + '.htm') != -1) {
+                            //$('.left a:eq(0)').css({ 'color': '' });
+                            $(this).parent().addClass('active');
+                        }
+                    });
+                }
+            }
+        });
+        function hide20130522() {
+            $('#ie-alert-overlay, #ie-alert-panel').remove();
+            $('body div').show();
+        }
+        function change_nav() { //改变导航
+            var screen_width = $(window).width();
+            if (screen_width >= 992) {
+                var margin_right = (screen_width - $('.navbar-brand').outerWidth() - $('#login-menu').outerWidth() - $('#menu').outerWidth()) / 2;
+                if (margin_right < 250) {
+                    $('.navbar-brand').css({ 'margin-right': margin_right + 'px' });
+                }
+                else {
+                    $('.navbar-brand').css({ 'margin-right': '250px' });
+                }
+            }
+            else {
+                $('.navbar-brand').css({ 'margin-right': '0px' });
+            }
+        }
+        $(window).resize(function () {
+            change_banner();
+            change_nav();
+        })
+        function change_banner() {
+            var img_bottom = ($('.banner').outerHeight() - $('.banner img').height()) / 2 - 50;
+            $('.banner img').css({ 'bottom': img_bottom + 'px' });
+        }
+        //改变菜单
+        $(document).scroll(function () {
+            change_nav();
+            change_menu();
+        });
+        function change_menu() {
+            var mytop = $(document).scrollTop();
+            if (mytop > 60) {
+                $('#header').addClass('mybg');
+                $('#header .navbar-brand:eq(0) img').attr({ 'src': 'images/logo.png' });
+            }
+            else {
+                $('#header').removeClass('mybg');
+                $('#header .navbar-brand:eq(0) img').attr({ 'src': 'images/logo-black.png' });
+            }
+        }
+    </script>
+
+</head>
+<body>
+<noscript>
+    <div id="noscript">
+        <a href="javascript:void(0)" onclick="document.getElementById('noscript').style.display='none'"
+           class="close">X</a>
+        <div class="inner">
+            您的浏览器已禁用JavaScript脚本，这会印象您的正常使用流程。为了拥有更好的浏览体验，请 <a href="http://wenwen.soso.com/z/q101859056.htm" target="_blank" class="turnon">查看这里</a> 启用脚本。
+        </div>
+    </div>
+</noscript>
+<!--头部开始-->
+<div class="navbar navbar-inverse navbar-fixed-top" id="header">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand visible-lg visible-md" href="/" title="维客佳"><img src="images/logo.png" alt="维客佳" /></a>
+        <a class="navbar-brand visible-xs visible-sm" href="/" title="维客佳"><img src="images/logo.png" alt="维客佳" /></a>
+    </div>
+    <div class="navbar-collapse collapse container">
+        <ul class="nav navbar-nav" id="menu">
+            <li>
+                <a href="/" title="首页">首页</a>
+            </li>
+            <li>
+                <a href="/Home/Channel/17.htm" title="快速保养通道">快速保养通道</a>
+            </li>
+            <li>
+                <a href="/Home/News/18.htm" title="养车动态">养车动态</a>
+            </li>
+            <li>
+                <a href="/Home/UserActivities/21.htm" title="会员中心">会员中心</a>
+            </li>
+            <li>
+                <a href="/Home/Knowledge/22.htm" title="养车知识">养车知识</a>
+            </li>
+            <li>
+                <a href="/Home/Introduction/26.htm" title="关于我们">关于我们</a>
+            </li>
+            <li>
+                <a href="/Home/Join/31.htm" title="加入VIC+">加入VIC+</a>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right" id="login-menu">
+            <li class="hidden-xs hidden-sm">
+                <a href="javascript:void(0);" title="登录" id="dropMenu14" data-toggle="dropdown"><img src="images/login.png" alt="登录" /></a>
+                <ul aria-labelledby="dropMenu14" role="menu" class="dropdown-menu">
+                    <li role="presentation"><a href="/Account/Login/21.htm?returnUrl=http%3A%2F%2Fwww.vic-plus.com%2F" tabindex="-1" role="menuitem">登录</a></li>
+                    <li role="presentation"><a href="/Account/Register/21.htm?returnUrl=http%3A%2F%2Fwww.vic-plus.com%2F" tabindex="-1" role="menuitem">注册</a></li>
+                </ul>
+            </li>
+            <li class="visible-xs visible-sm" style="border-top: solid 1px silver;">
+                <a href="/Account/Login/21.htm?returnUrl=http%3A%2F%2Fwww.vic-plus.com%2F" title="登录">登录</a>
+            </li>
+            <li class="visible-xs visible-sm">
+                <a href="/Account/Register/21.htm?returnUrl=http%3A%2F%2Fwww.vic-plus.com%2F" title="注册">注册</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--头部结束-->
+
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active" style="background-image: url(images/bannere.jpg); ">
+            <div class="carousel-caption">
+                <a href="http://www.vic-plus.com/Home/Channel/17.htm" title="立即预约"><img alt="立即预约" class="img-responsive" src="images/BannerTypo.png" /></a>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(images/bannerg.jpg); ">
+            <div class="carousel-caption">
+                <img alt="" class="img-responsive center-block" src="images/bannergtypo.png"/>
+            </div>
+        </div>
+
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+<!-- banner结束 -->
+<!--服务流程开始-->
+<div class="container">
+    <div class="height-middle hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <h3 class="h3-title"><img src="images/process.png" alt="维客佳服务流程" class="img-responsive center-block"></h3>
+    <div class="row text-center" id="process">
+        <div class="col-lg-2 col-md-2 col-sm-5">
+            <a href="/Home/Channel/17.htm" title=""><img src="images/1.png" alt="预订服务" /></a>
+            <h4>预订服务</h4>
+            <p>24小时在线下单，选择您的爱车型号，推荐适用您的机油配件，实时报价，清晰透明</p>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-2"><img src="images/jiantou.png" alt="箭头" /></div>
+        <div class="col-lg-2 col-md-2 col-sm-5">
+            <img src="images/2.png" alt="上门养车" />
+            <h4>上门养车</h4>
+            <p>保养技师按时间到达约定地点，确认服务内容及价格。现场布置影像记录仪，对施工现场及全过程进行全程监控</p>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12"><img src="images/jiantou.png" alt="箭头" /></div>
+        <div class="clearfix visible-sm"></div>
+        <div class="col-lg-2 col-md-2 col-sm-all">
+            <img src="images/3.png" alt="爱车体检" />
+            <h4>爱车体检</h4>
+            <p>为您的爱车进行40项全面检测，提前诊断故障隐患，为您的前路保驾护航</p>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12"><img src="images/jiantou.png" alt="箭头" /></div>
+        <div class="clearfix visible-sm"></div>
+        <div class="col-lg-2 col-md-2 col-sm-5">
+            <img src="images/4.png" alt="费用结算" />
+            <h4>费用结算</h4>
+            <p>确定完工并检查，保证完成您满意再付款</p>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-2"><img src="images/jiantou.png" alt="箭头" /></div>
+        <div class="col-lg-2 col-md-2 col-sm-5">
+            <img src="images/5.png" alt="养车报告" />
+            <h4>养车报告</h4>
+            <p>根据检测结果制定专业检测报告，于您的爱车养护完毕后的3个工作日内发送至您的邮箱或以短信方式告知您</p>
+        </div>
+    </div>
+    <div class="height-mini"></div>
+</div>
+<!--服务流程结束-->
+
+<div class="part-item" style="background-image:url(images/banner2.jpg)" id="part-one">
+    <a class="part-btn" onclick="gotoGoal('part-two', this);" href="javascript:void(0);" title="前往下一栏"></a>
+    <div class="height-big hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <h3 class="h3-title"><img src="images/supply.png" alt="维客佳能提供给你" class="img-responsive center-block"></h3>
+    <div class="height-middle hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <div class="container" id="provide">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <img src="images/1.jpg" alt="专业技师团队" class="img-responsive center-block" />
+            <a href="/Home/Advantage#item-27" title="专业技师团队">我们为您提供<span>专业技师团队</span></a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <img src="images/2.gif" alt="一线正品配件" class="img-responsive center-block" />
+            <a href="/Home/Advantage#item-28" title="一线正品配件">我们为您提供<span>一线正品配件</span></a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <img src="images/3.jpg" alt="定制养车报告" class="img-responsive center-block" />
+            <a href="/Home/Advantage#item-29" title="定制养车报告">我们为您提供<span>定制养车报告</span></a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="height-big hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+</div>
+
+<div class="container">
+    <div class="height-big hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <h3 class="h3-title"><img src="images/why.png" alt="为什么选择维客佳" class="img-responsive center-block"></h3>
+    <div class="height-big hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <div class="row" id="why">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <a href="/Home/Advantage#item-47" title="省时">
+                <img src="images/why-1.png" alt="省时" class="img-responsive" />
+            </a>
+            <h3>省时</h3>
+            <p>线上下单，线下上门服务，45分钟常规保养，快速便捷</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <a href="/Home/Advantage#item-30" title="省心">
+                <img src="images/why-2.png" alt="省心" class="img-responsive" />
+            </a>
+            <h3>省心</h3>
+            <p>只需拨打400客服电话或通过官网、微信下单，量身打造您爱车的专业保养</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <a href="/Home/Advantage#item-48" title="省钱">
+                <img src="images/why-3.png" alt="省钱" class="img-responsive" />
+            </a>
+            <h3>省钱</h3>
+            <p>价格清晰透明，所有配件均由一级经销商直接供货，最高节省70%的费用</p>
+        </div>
+    </div>
+    <div class="height-big hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+</div>
+<!--一行结束-->
+<div class="part-item" style="background-image:url(images/banner3.jpg)" id="part-two">
+    <a class="part-btn" onclick="gotoGoal('part-three', this);" href="javascript:void(0);" title="前往下一栏"></a>
+    <div class="height-big hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <div class="container">
+        <h3><img src="images/news.png" alt="新闻动态" class="img-responsive pull-left"><a href="/Home/News/18.htm" title="" class="badge pull-right">更多</a></h3>
+        <div class="clearfix"></div>
+        <div class="height-mini"></div>
+        <div class="row bg-color">
+            <div class="col-sm-4">
+                <a href="/Home/ArticleDetailed/635737593116207500/18.htm" title="4S店前员工说：九成车主从没用过好机油"><img src="images/4s.jpg" alt="4S店前员工说：九成车主从没用过好机油" class="img-responsive center-block"></a>
+
+            </div>
+            <div class="col-sm-8 bg-color">
+                <ul class="list small row-2">
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635737593116207500/18.htm" title="4S店前员工说：九成车主从没用过好机油">·4S店前员工说：九成车主从没用过好机油</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635773310698117500/18.htm" title="你的车多少公里保养一次？揭秘4S店保养周期缩短那些事">·你的车多少公里保养一次？揭秘4S店保养..</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635764410932968750/18.htm" title="德系奔驰保养周期与价目表">·德系奔驰保养周期与价目表</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635761179671718750/18.htm" title="最全汽车机油级别常识">·最全汽车机油级别常识</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635756629927968750/18.htm" title="汽车小知识拓展 燃油滤清器基本保养常识">·汽车小知识拓展 燃油滤清器基本保养常识</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635755793460156250/18.htm" title="换季汽车保养空气滤芯是重点">·换季汽车保养空气滤芯是重点</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635755112266250000/18.htm" title="汽车保养常识：汽车空调滤清器多久更换一次">·汽车保养常识：汽车空调滤清器多久更换一..</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635754006535937500/18.htm" title="汽车各公里数或里程段的保养项目">·汽车各公里数或里程段的保养项目</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635749694574791250/18.htm" title="十大国产汽车品牌排行榜">·十大国产汽车品牌排行榜</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635763808898437500/18.htm" title="大众速腾基本保养周期和价格">·大众速腾基本保养周期和价格</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635748249708228750/18.htm" title="养一辆车一年需要花多少钱？">·养一辆车一年需要花多少钱？</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635739332602613750/18.htm" title="别以为汽车只有发动机“吃油”，别的零件也“吃油”">·别以为汽车只有发动机“吃油”，别的零件..</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635736988078395000/18.htm" title="不在4s店保养就脱保是霸王条款">·不在4s店保养就脱保是霸王条款</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635647784604218750/18.htm" title="互联网+战略下的汽车保养新模式">·互联网+战略下的汽车保养新模式</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635630535602031250/18.htm" title="汽车上门保养成趋势，4S店模式“或将被瓦解">·汽车上门保养成趋势，4S店模式“或将被..</a></li>
+                    <li><a target="_blank" href="/Home/ArticleDetailed/635623808302875000/18.htm" title="汽车保养O2O是啥？">·汽车保养O2O是啥？</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="height-big hidden-xs"></div>
+    <div class="height-small"></div>
+</div>
+<!--新闻结束-->
+<div class="container">
+    <div class="height-big hidden-xs hidden-sm"></div>
+    <div class="height-mini visible-xs"></div>
+    <div class="row" id="app">
+        <div class="col-lg-5 col-md-5">
+            <img src="images/app1.png" alt="App手机应用" class="img-responsive center-block">
+            <p>
+                扫描二维码关注维客佳微信公众平台，微信下单，在线咨询两不误
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6"><img src="images/app2.png" alt="二维码" class="img-responsive center-block"></div>
+        <div class="col-lg-4 col-md-4 col-sm-6"><img src="images/app3.png" alt="维客佳手机应用" class="img-responsive center-block"></div>
+    </div>
+</div>
+<!--app结束-->
+<div class="part-item" style="background-image:url(images/banner4.jpg)" id="part-three">
+    <a class="part-btn" onclick="gotoGoal('part-bottom', this);" href="javascript:void(0);" title="前往下一栏"></a>
+    <div style="height:160px;" class="hidden-xs hidden-sm"></div>
+    <div class="height-mini visible-xs"></div>
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 love-car">
+        <span>
+            随时随地保养你的爱车
+        </span>
+        维客佳已经在路上
+    </div>
+    <div class="clearfix"></div>
+    <div style="height:160px;" class="hidden-xs hidden-sm"></div>
+    <div class="height-mini"></div>
+</div>
+<!--广告结束-->
+<!--底部开始-->
+<div class="height-middle hidden-xs"></div>
+<div class="height-mini visible-xs"></div>
+<div class="container" id="part-bottom">
+    <div class="height-middle hidden-xs"></div>
+    <div class="height-mini visible-xs"></div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 small">
+            <h4><span>服务</span>支持</h4>
+            <a href="/Home/Services#item-12" title="售后政策">·售后政策</a><br />
+            <a href="/Home/Services#item-13" title="服务保障">·服务保障</a><br />
+            <a href="/Home/Services#item-14" title="服务说明">·服务说明</a>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 small">
+            <h4><span>网站</span>地图</h4>
+            <a href="/Home/Channel/17.htm" title="在线下单">·在线下单</a><br />
+            <a href="" title="">·维客汽车养护套餐</a><br />
+            <a href="/Account/Login/21.htm" title="维客会员登录">·维客会员登录</a><br />
+            <a href="/Home/Knowledge/22.htm" title="汽车保养知识">·汽车保养知识</a><br />
+            <a href="/Home/Join/31.htm" title="维客人才招聘">·维客人才招聘</a>
+        </div>
+        <div class="clearfix visible-xs"></div>
+        <div class="col-lg-3 col-md-4 col-sm-5 small" style="line-height:30px;">
+            <h4><span>联系</span>我们</h4>
+            <img src="images/icon1.png" alt="电话" />&nbsp;400-6080-573<br />
+            <img src="images/icon2.png" alt="地址" />&nbsp;太原市长风东街店坡社区9号<br />
+            <img src="images/icon3.png" alt="邮箱" />&nbsp;<a href="mailto:weikejia@vic-plus.com">weikejia@vic-plus.com</a><br />
+            <a href="tencent://message/?uin=3108791413&amp;Site=维客佳上门保养服务咨询&amp;Menu=yes" target="_blank" title="QQ咨询" class="a1"></a>
+            <a href="" title="" class="a2"></a>
+            <a href="http://weibo.com/p/1006065406884105/home?from=page_100606&mod=TAB#place" target="_blank" title="微博" class="a3"></a>
+        </div>
+        <div class="clearfix visible-sm visible-xs"></div>
+        <div class="col-lg-4 col-md-4">
+            <div class="height-small visible-sm visible-xs"></div>
+            <div class="row" id="app2">
+                <div class="col-lg-6 col-sm-6">
+                    <img src="images/app2.png" alt="app" class="img-responsive center-block" />
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <img src="images/app4.png" alt="app" class="img-responsive center-block" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+    <div class="container text-center">
+        版权所有 2014 <a href="http://www.vic-plus.com">太原维客佳汽车服务有限公司</a> <a href="http://www.miitbeian.gov.cn" target="_blank">晋ICP备14002325号-1</a>
+        <div class="btn-group pull-right dropup">
+            <button type="button" class="btn btn-default btn-sm hidden-sm" data-toggle="dropdown">
+                友情链接<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="http://www.s-esse.com" target="_blank" title="爱喜文化传媒">爱喜文化传媒</a></li>
+                <li><a href="http://haoche.ganji.com/ty/" target="_blank" title="赶集好车">赶集好车</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部结束-->
+<input type="hidden" id="myWebTitle20130531" value="维客佳-太原上门汽车保养专家" />
+<input type="hidden" id="ww_jsCid20120423" />
+<input type="hidden" id="ww_arcId20120816" />
+<input type="hidden" id="ww_backPageUrl20120913" value="http://www.vic-plus.com/" />
+</body>
+</html>
