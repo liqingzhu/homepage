@@ -7,6 +7,10 @@
     height: 70px;
 }
 
+#agent div.col-lg-2 img {
+    height: 70px;
+}
+
 @media (max-width: 768px) {
     #process div.col-lg-1 img {
         -webkit-transform: rotate(90deg);
@@ -14,6 +18,15 @@
     }
 
     #process div {
+        margin: 15px auto;
+    }
+
+    #agent div.col-lg-1 img {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    #agent div {
         margin: 15px auto;
     }
 
@@ -48,6 +61,15 @@
         margin: 80px auto;
     }
 
+    #agent div.col-lg-1 img {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    #agent div {
+        margin: 15px auto;
+    }
+
     #why img {
         float: left;
         margin-right: 15px;
@@ -74,31 +96,77 @@
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-
     #process div:not(.clearfix) {
         margin: 40px auto 0px auto;
     }
-
     #process .col-sm-2 {
         padding-top: 50px;
     }
-
     #process div.col-sm-12 {
         margin: 15px 0px 0px 0px;
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
         clear: both;
     }
-
     #process div.col-sm-all {
         margin: 10px auto;
         padding: 20px 0px 0px 0px;
     }
-
     #process .clearfix {
         border-bottom: dashed 1px silver;
     }
+    #agent div:not(.clearfix) {
+        margin: 40px auto 0px auto;
+    }
+
+    #agent .col-sm-2 {
+        padding-top: 50px;
+    }
+
+    #agent div.col-sm-12 {
+        margin: 15px 0px 0px 0px;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        clear: both;
+    }
+
+    #agent div.col-sm-all {
+        margin: 10px auto;
+        padding: 20px 0px 0px 0px;
+    }
+
+    #agent .clearfix {
+        border-bottom: dashed 1px silver;
+    }
 }
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #agent div:not(.clearfix) {
+        margin: 40px auto 0px auto;
+    }
+
+    #agent .col-sm-2 {
+        padding-top: 50px;
+    }
+
+    #agent div.col-sm-12 {
+        margin: 15px 0px 0px 0px;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        clear: both;
+    }
+
+    #agent div.col-sm-all {
+        margin: 10px auto;
+        padding: 20px 0px 0px 0px;
+    }
+
+    #agent .clearfix {
+        border-bottom: dashed 1px silver;
+    }
+}
+
 
 .part-item {
     position: relative;
@@ -193,6 +261,7 @@
 
 .bg-color {
     background-color: #F15923;
+    /*background-color: #c5c5c5;*/
     padding: 7.5px;
 }
 
